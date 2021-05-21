@@ -11,4 +11,7 @@ export default createGlobalStyle`
  }
  :root {
      --blue: #1A74DD;
+ }
+ label {
+     display: none;
  }`;
