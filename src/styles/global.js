@@ -14,4 +14,7 @@ export default createGlobalStyle`
  }
  label {
      display: none;
+ }
+ input {
+     padding: 0.5rem;
  }`;
