@@ -22,7 +22,6 @@ const Routes = () => {
       <Route path="/profileData">
         <ProfileData
           isAuthorized={isAuthorized}
-          setIsAuthorized={setIsAuthorized}
         />
       </Route>
       <Route path="/addtech">

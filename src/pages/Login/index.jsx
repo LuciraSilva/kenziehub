@@ -6,7 +6,7 @@ import api from "../../services";
 import { Container } from "./styles";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
-const Login = ({ isAuthorized, setIsAuthorized }) => {
+const Login = ({ setIsAuthorized }) => {
   const history = useHistory();
   const schema = yup.object().shape({
     email: yup.string().email("Email inválido").required("Campo obrigatório"),
@@ -29,11 +29,12 @@ const Login = ({ isAuthorized, setIsAuthorized }) => {
       .post("/sessions", data)
       .then((response) => {
         const { token } = response.data;
+        const { user } = response.data;
         localStorage.clear();
         localStorage.setItem("@kenziehub:token", JSON.stringify(token));
         reset();
-        setIsAuthorized(true);
-        return history.push("/profiledata");
+        // setIsAuthorized(true);
+        history.push("/profiledata", user);
       })
       .catch((err) => toast.error("Email ou senha inválidos"));
   };
