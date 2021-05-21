@@ -6,4 +6,9 @@ export default createGlobalStyle`
      padding: 0;
      box-sizing: border-box;
      outline: 0;
+     border: 0;
+
+ }
+ :root {
+     --blue: #1A74DD;
  }`;

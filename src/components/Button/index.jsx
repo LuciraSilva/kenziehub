@@ -1,4 +1,5 @@
+import { Conteiner } from "./styles";
 const Button = ({ children, handleClick }) => {
-  return <button onClick={handleClick}>{children}</button>;
+  return <Conteiner type="button" onClick={handleClick}>{children}</Conteiner>;
 };
 export default Button;
