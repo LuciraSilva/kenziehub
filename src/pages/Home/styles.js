@@ -5,9 +5,15 @@ export const Conteiner = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-
-  img {
-    width: 100%;
+  align-items: center;
+  > div {
+    height: 100%;
+    max-height: 500px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 `;
 
@@ -22,8 +28,7 @@ export const Content = styled.div`
     margin-bottom: 100px;
     color: white;
   }
-  div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
+  button + button {
+    margin-top: 0.3rem;
   }
 `;
