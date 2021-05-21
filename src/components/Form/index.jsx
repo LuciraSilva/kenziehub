@@ -52,17 +52,17 @@ const Form = ({ setUser }) => {
       contact,
       course_module,
     };
-    console.log(user)
     setUser(user);
     reset();
   };
-  console.log(errors);
   return (
     <Container>
       <h2>Cadastro</h2>
       <form onSubmit={handleSubmit(handleOnSubmit)}>
+        
         <label htmlFor="">Nome</label>
         <input id="name" type="text" placeholder="Nome" {...register("name")} />
+        {errors.name?.message && <span>{errors.name.message}</span>}
 
         <label htmlFor="email">Email</label>
         <input
@@ -80,7 +80,9 @@ const Form = ({ setUser }) => {
           placeholder="Confirmação de email"
           {...register("emailConfirm")}
         />
-        {errors.email?.message && <span>{errors.email.message}</span>}
+        {errors.emailConfirm?.message && (
+          <span>{errors.emailConfirm.message}</span>
+        )}
 
         <label htmlFor="contact">Contato</label>
         <input

@@ -4,8 +4,10 @@ import Register from "../pages/Register";
 import Login from "../pages/Login";
 import ProfileData from "../pages/ProfileData";
 import AddTech from "../pages/AddTech";
+import { useState } from "react";
 
 const Routes = () => {
+  const [isAuthorized, setIsAuthorized] = useState(false);
   return (
     <Switch>
       <Route exact path="/">
@@ -18,10 +20,16 @@ const Routes = () => {
         <Login />
       </Route>
       <Route path="/profileData">
-        <ProfileData />
+        <ProfileData
+          isAuthorized={isAuthorized}
+          setIsAuthorized={setIsAuthorized}
+        />
       </Route>
       <Route path="/addtech">
-        <AddTech />
+        <AddTech
+          isAuthorized={isAuthorized}
+          setIsAuthorized={setIsAuthorized}
+        />
       </Route>
     </Switch>
   );
