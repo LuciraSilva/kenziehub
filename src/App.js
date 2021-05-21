@@ -1,6 +1,8 @@
+import Routes from "./routes";
+
 const App = () => {
   return (
-    <div>Oi</div>
+    <Routes />
   );
 }
 
