@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "../Button";
 import { Container } from "./styles";
-const Form = () => {
+const Form = ({ setUser }) => {
   const schema = yup.object().shape({
     name: yup.string().required("Campo obrigatório"),
     email: yup.string().email("Email inválido").required("Campo obrigatório"),
@@ -36,7 +36,26 @@ const Form = () => {
     resolver: yupResolver(schema),
   });
 
-  const handleOnSubmit = (data) => console.log(data);
+  const handleOnSubmit = ({
+    email,
+    password,
+    name,
+    bio,
+    contact,
+    course_module,
+  }) => {
+    const user = {
+      email,
+      password,
+      name,
+      bio,
+      contact,
+      course_module,
+    };
+    console.log(user)
+    setUser(user);
+    reset();
+  };
   console.log(errors);
   return (
     <Container>
