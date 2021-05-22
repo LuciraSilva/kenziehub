@@ -6,4 +6,5 @@ export const Container = styled.button`
   max-width: 180px;
   padding: 0.5rem;
   color: white;
+  cursor: pointer;
 `;

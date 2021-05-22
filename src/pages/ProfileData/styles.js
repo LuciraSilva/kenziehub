@@ -7,9 +7,15 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-evenly;
   h2 {
-      align-self: flex-start;
-      margin-left: 10px;
+    align-self: flex-start;
+    margin-left: 10px;
   }
+
+  @media (min-width: 768px) {
+    h2 {
+      align-self: initial;
+    }
+  } ;
 `;
 
 export const Content = styled.div`
@@ -21,12 +27,21 @@ export const Content = styled.div`
   max-height: 400px;
   padding: 1rem;
   span {
-      font-weight: 700;
+    font-weight: 700;
   }
   ul li {
-      margin-left: 10px;
+    margin-left: 10px;
   }
   button {
-      margin-top: 10px;
+    margin-top: 10px;
   }
+  @media (min-width: 768px) {
+    max-height: 350px;
+    width: 500px;
+
+    button {
+      margin-top: 5rem;
+      align-self: flex-end;
+    }
+  }; 
 `;

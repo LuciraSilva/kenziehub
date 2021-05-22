@@ -17,4 +17,9 @@ export const Container = styled.div`
       margin: 5px auto 0 auto;
     }
   }
+  @media (min-width: 768px){
+    input {
+      width: 200px;
+    }
+  };
 `;

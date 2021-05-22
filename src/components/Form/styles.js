@@ -13,8 +13,15 @@ export const Container = styled.div`
     input {
       border: 1px solid var(--blue);
     }
+    select {
+      background-color: aliceblue;
+      padding: 0.5rem;
+    }
     button {
       margin: 5px auto 0 auto;
+    }
+    span {
+      color: red;
     }
   }
 `;

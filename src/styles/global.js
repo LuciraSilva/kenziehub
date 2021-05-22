@@ -8,10 +8,13 @@ export default createGlobalStyle`
      outline: 0;
      border: 0;
      list-style: none;
-
+     font-family: monospace;
  }
  :root {
      --blue: #1A74DD;
+ }
+ h2 {
+     font-size: 2rem;
  }
  label {
      display: none;

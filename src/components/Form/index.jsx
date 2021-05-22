@@ -12,7 +12,7 @@ const Form = ({ setUser }) => {
       .oneOf([yup.ref("email")], "Email incorreto")
       .required("Campo obrigatório"),
     contact: yup.string().required("Campo obrigatório"),
-    bio: yup.string().max(200, "Limite de caracteres excedido"),
+    bio: yup.string().max(200, "Limite de caracteres excedido").required("Campo obrigatório"),
     password: yup
       .string()
       .min(6, "Senha mínima de 6 dígitos")

@@ -25,7 +25,7 @@ const ProfileData = () => {
         </ul>
         <p><span>Módulo</span>: {course_module}</p>
 
-        <Button handleClick={sendToAddTech}>Adicionar tecnologia</Button>
+        <Button handleClick={sendToAddTech}>Editar tecnologias</Button>
       </Content>
     </Container>
   );

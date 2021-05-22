@@ -15,11 +15,20 @@ export const Conteiner = styled.div`
       object-fit: cover;
     }
   }
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    > div {
+      max-height: 100%;
+      width: 100%;
+    }
+  }
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   height: 100%;
 
@@ -28,7 +37,22 @@ export const Content = styled.div`
     margin-bottom: 100px;
     color: white;
   }
+
   button + button {
     margin-top: 0.3rem;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    justify-content: space-evenly;
+    div:first-child {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: black;
+    }
+    button + button {
+      margin-top: 0;
+      margin-left: 10px;
+    }
   }
 `;
