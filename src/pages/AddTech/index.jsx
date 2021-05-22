@@ -2,9 +2,7 @@ import { useEffect, useState } from "react";
 import Button from "../../components/Button";
 import api from "../../services";
 import { useHistory } from "react-router";
-import * as yup from "yup";
-import { set, useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
+
 const AddTech = ({ isAuthorized }) => {
   const history = useHistory();
   const userId = history.location.state;
