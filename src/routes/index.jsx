@@ -3,7 +3,7 @@ import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import ProfileData from "../pages/ProfileData";
-import AddTech from "../pages/AddTech";
+import Tech from "../pages/Tech";
 import { useState } from "react";
 
 const Routes = () => {
@@ -23,12 +23,9 @@ const Routes = () => {
       <Route path="/profileData">
         {isAuthorized ? <ProfileData /> : history.push("/")}
       </Route>
-      <Route path="/addtech">
+      <Route path="/tech">
         {isAuthorized && (
-          <AddTech
-            isAuthorized={isAuthorized}
-            setIsAuthorized={setIsAuthorized}
-          />
+          <Tech isAuthorized={isAuthorized}/>
         )}
       </Route>
     </Switch>

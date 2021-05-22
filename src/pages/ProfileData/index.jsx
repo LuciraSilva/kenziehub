@@ -5,7 +5,7 @@ const ProfileData = () => {
   const history = useHistory();
   const { name, email, course_module, techs, id } = history.location.state;
   const sendToAddTech = () => {
-    return history.push("/addTech", id);
+    return history.push("/Tech", id);
   };
   return (
     <Container>

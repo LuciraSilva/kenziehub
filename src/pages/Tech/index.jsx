@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import { Container, Content } from "./styles";
 
-const AddTech = ({ isAuthorized }) => {
+const Tech = ({ isAuthorized }) => {
   const history = useHistory();
   const userId = history.location.state;
 
@@ -154,4 +154,4 @@ const AddTech = ({ isAuthorized }) => {
     </Container>
   );
 };
-export default AddTech;
+export default Tech;
