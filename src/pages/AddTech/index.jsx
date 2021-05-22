@@ -3,6 +3,7 @@ import Button from "../../components/Button";
 import api from "../../services";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
+import { Container, Content } from "./styles";
 
 const AddTech = ({ isAuthorized }) => {
   const history = useHistory();
@@ -108,9 +109,9 @@ const AddTech = ({ isAuthorized }) => {
       api.get(`/users/${userId}`).then((response) => history.push("/profiledata", response.data));
   }
   return (
-    <div>
+    <Container>
       {wannaAdd ? (
-        <div>
+        <Content>
           <label htmlFor="title">Nome</label>
           <input
             id="title"
@@ -132,9 +133,9 @@ const AddTech = ({ isAuthorized }) => {
           <Button handleClick={() => setWannaAdd(false)}>
             Deletar tecnologias
           </Button>
-        </div>
+        </Content>
       ) : (
-        <div>
+        <Content>
           <label htmlFor="title">Nome</label>
           <input
             id="title"
@@ -148,9 +149,9 @@ const AddTech = ({ isAuthorized }) => {
           <Button handleClick={() => setWannaAdd(true)}>
             Adicionar/atualizar tecnologias
           </Button>
-        </div>
+        </Content>
       )}
-    </div>
+    </Container>
   );
 };
 export default AddTech;
