@@ -28,12 +28,11 @@ const Login = ({ setIsAuthorized }) => {
     api
       .post("/sessions", data)
       .then((response) => {
-        const { token } = response.data;
-        const { user } = response.data;
+        const { token, user } = response.data;
         localStorage.clear();
-        localStorage.setItem("@kenziehub:token", JSON.stringify(token));
+        localStorage.setItem("@Kenziehub:token", JSON.stringify(token));
         reset();
-        // setIsAuthorized(true);
+        setIsAuthorized(true);
         history.push("/profiledata", user);
       })
       .catch((err) => toast.error("Email ou senha inválidos"));

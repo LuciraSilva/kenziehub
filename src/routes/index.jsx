@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router";
+import { Route, Switch, useHistory } from "react-router";
 import Home from "../pages/Home";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
@@ -7,6 +7,7 @@ import AddTech from "../pages/AddTech";
 import { useState } from "react";
 
 const Routes = () => {
+  const history = useHistory();
   const [isAuthorized, setIsAuthorized] = useState(false);
   return (
     <Switch>
@@ -17,18 +18,18 @@ const Routes = () => {
         <Register />
       </Route>
       <Route path="/login">
-        <Login />
+        <Login setIsAuthorized={setIsAuthorized} />
       </Route>
       <Route path="/profileData">
-        <ProfileData
-          isAuthorized={isAuthorized}
-        />
+        {isAuthorized ? <ProfileData /> : history.push("/")}
       </Route>
       <Route path="/addtech">
-        <AddTech
-          isAuthorized={isAuthorized}
-          setIsAuthorized={setIsAuthorized}
-        />
+        {isAuthorized && (
+          <AddTech
+            isAuthorized={isAuthorized}
+            setIsAuthorized={setIsAuthorized}
+          />
+        )}
       </Route>
     </Switch>
   );
