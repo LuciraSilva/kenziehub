@@ -1,6 +1,6 @@
 import { useHistory } from "react-router";
 import Button from "../../components/Button";
-
+import { Container, Content } from "./styles";
 const ProfileData = () => {
   const history = useHistory();
   const { name, email, course_module, techs, id } = history.location.state;
@@ -8,15 +8,26 @@ const ProfileData = () => {
     return history.push("/addTech", id);
   };
   return (
-    <div>
-      <h3>Nome: {name}</h3>
-      <p>Email: {email}</p>
-      
-      <ul>Tecnologias: {techs && techs.map((tech) => <li key={tech.id}>{tech.title}: {tech.status} </li>)}</ul>
-      <p>Módulo: {course_module}</p>
+    <Container>
+      <h2>Informações do perfil</h2>
+      <Content>
+        <p><span>Nome:</span> {name}</p>
+        <p><span>Email</span>: {email}</p>
 
-      <Button handleClick={sendToAddTech}>Adicionar tecnologia</Button>
-    </div>
+        <ul>
+          <span>Tecnologias:</span>
+          {techs &&
+            techs.map((tech) => (
+              <li key={tech.id}>
+                {tech.title}: {tech.status}
+              </li>
+            ))}
+        </ul>
+        <p><span>Módulo</span>: {course_module}</p>
+
+        <Button handleClick={sendToAddTech}>Adicionar tecnologia</Button>
+      </Content>
+    </Container>
   );
 };
 
